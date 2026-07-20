@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Love Cinema Pro 🎬</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<h1>🎬 Love Cinema Pro</h1>
+
+</header>
+
+
+
+<section class="room">
+
+<h2>🎬 الغرفة</h2>
+
+<input 
+id="username"
+placeholder="اكتب اسمك">
+
+
+<input 
+id="roomCode"
+placeholder="رمز الغرفة">
+
+
+<button onclick="createRoom()">
+➕ إنشاء غرفة
+</button>
+
+
+<button onclick="joinRoom()">
+🚪 دخول الغرفة
+</button>
+
+
+</section>
+
+
+<section class="video-area">
+
+
+<video 
+id="movie"
+controls>
+
+</video>
+
+
+<div class="controls">
+
+
+<input 
+id="videoURL"
+placeholder="رابط الفيديو">
+
+
+<button onclick="playURL()">
+▶ تشغيل
+</button>
+
+
+
+<input 
+type="file"
+id="videoFile"
+accept="video/*">
+
+
+<button onclick="uploadVideo()">
+رفع فيديو
+</button>
+
+
+</div>
+
+
+</section>
+
+
+
+<section class="call">
+
+
+<video 
+id="localVideo"
+autoplay
+muted>
+</video>
+
+
+<video 
+id="remoteVideo"
+autoplay>
+</video>
+
+
+
+<br>
+
+
+<button onclick="startCall(false)">
+🎤 تشغيل المايك
+</button>
+
+
+<button onclick="startCall(true)">
+📹 تشغيل الكاميرا
+</button>
+
+
+<button onclick="toggleMicrophone()">
+🔇 المايك
+</button>
+
+
+<button onclick="makeCall()">
+📞 اتصال
+</button>
+
+
+</section>
+
+
+
+
+<section class="chat">
+
+
+<h2>💬 الدردشة</h2>
+
+
+<div id="messages"></div>
+
+
+<input 
+id="message"
+placeholder="اكتب رسالة">
+
+
+<button onclick="sendMessage()">
+إرسال
+</button>
+
+
+</section>
+
+
+
+
+
+<script src="/socket.io/socket.io.js"></script>
+<script>
+const socket = io();
+</script>
+<script src="app.js"></script>
+
+<script src="room.js"></script>
+
+<script src="webrtc.js"></script>
+
+<script src="chat.js"></script>
+
+<script src="movies.js"></script>
+
+
+</body>
+
+</html>
